@@ -7,7 +7,6 @@ An example app with **real hardware** for ROS competitor [RhoMBus](https://githu
     
     go run control/commands.go 
 
-
-<img src="https://raw.githubusercontent.com/eranet/pendabot/imgs/pendabot.gif" height="250" />
+<img src="https://github.com/eranet/pendabot/blob/master/imgs/pendabot.gif" height="250" />
 ---
 Feel free to open issues and create pull requests.
