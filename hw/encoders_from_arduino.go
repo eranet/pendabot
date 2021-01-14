@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
-	"github.com/bugst/go-serial"
 	"github.com/eranet/rhombus/rhomgo"
+	"go.bug.st/serial"
 	"log"
 	"strconv"
 	"strings"

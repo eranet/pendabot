@@ -12,18 +12,17 @@ async def run(loop):
 
     await nc.connect(loop=loop)
 
-    async def message_handler(msg):
+    async def message_handler(msg): # wait for command and set command to motor
         subject = msg.subject
         reply = msg.reply
         data = json.loads(msg.data.decode())
         print("Received a message on '{subject} {reply}': {data}".format(subject=subject, reply=reply, data=data))
         print(data['Value'])
-
         # my_drive.axis0.controller.current_setpoint = -data.Value/0.123  # coefficient torque / current
 
     sid = await nc.subscribe("/pendabot/shoulder_torque_controller/command", cb=message_handler)
 
-    while True:
+    while True: # publish current state
         c_value = random.random()  # my_drive.axis0.motor.current_control.Iq_measured
         data = {
             "Value": c_value,
